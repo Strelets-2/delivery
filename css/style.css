@@ -1,0 +1,496 @@
+* {
+  box-sizing: border-box;
+  font-family: Roboto;
+  font-style: normal;
+  line-height: normal;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+p {
+  margin: 0;
+}
+
+.page-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 1230px;
+  /* height: 100%; */
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.main {
+  flex-grow: 1;
+  background: linear-gradient(180deg, rgba(245, 245, 245, 0.00) 1.04%, #F5F5F5 100%);
+}
+
+.btn {
+  padding: 8px 16px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  /* Убираем обводку вокруг кнопок */
+  outline: none;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  /* 150% */
+}
+
+.btn-primary {
+  border-radius: 2px;
+  background: #1890FF;
+  border: 1px solid #1890FF;
+  color: #FFF;
+}
+
+.btn-outline {
+  border-radius: 2px;
+  border: 1px solid #D9D9D9;
+  background: #FFF;
+  color: #595959;
+}
+
+.logo {
+  max-width: 100px;
+  max-height: 36px;
+}
+
+.logo img {
+  width: 100%;
+
+}
+
+.header {
+  padding: 44px 0;
+}
+
+.header-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-controls {
+  display: flex;
+  align-items: center;
+  /* Чтобы кнопки разрастались в левую сторону */
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+.footer {
+  padding: 60px 0;
+}
+
+.footer-box {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 36px;
+  align-items: center;
+}
+
+.footer-nav {
+  /* растягиваем элемент на все свободное пространство */
+  flex-grow: 1;
+}
+
+.footer-nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  list-style: none;
+  gap: 15px;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-nav ul li a {
+  color: #595959;
+  font-size: 18px;
+  font-weight: 400;
+  text-decoration: none;
+}
+
+.footer-social {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 21px;
+}
+
+.banner {
+  margin-bottom: 56px;
+}
+
+.banner__item {
+  background-color: #FFF1B8;
+  background-image: url(../images/banners/banner-img.png);
+  background-repeat: no-repeat;
+  background-position: center right;
+  background-size: contain;
+  padding: 68px;
+  border-radius: 10px;
+}
+
+.banner__title {
+  color: #302C34;
+  font-size: 39px;
+  font-weight: 700;
+  max-width: 460px;
+  margin-bottom: 12px;
+}
+
+.banner__text {
+  color: #302C34;
+  font-size: 24px;
+  font-weight: 400;
+  max-width: 538px;
+}
+
+.products__header {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.products__header-title {
+  color: #000;
+  font-size: 36px;
+  font-weight: 700;
+}
+
+.products__header-search {
+  min-width: 306px;
+  height: 34px;
+  flex-shrink: 0;
+  border-radius: 2px;
+  border: 1px solid #D9D9D9;
+  background: #FFF;
+  padding: 5px 12px;
+}
+
+.products__header-search:focus {
+  outline: none;
+}
+
+.products__header-search::placeholder {
+  color: #BFBFBF;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  /* 150% */
+}
+
+.products__wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px 24px;
+  margin-top: 44px;
+  margin-bottom: 90px;
+}
+
+/* Устанавливаем динамический размер карточки (для адаптива) чтобы на брекпоинтах менять их ширину*/
+.products__card {
+  width: calc((100% - 48px) / 3);
+  border-radius: 7px;
+  background: #FFF;
+  box-shadow: 0px 4px 12px 0px rgba(0, 0, 0, 0.05);
+  /* Чтобы картинка обрезалась по закруглению карточки */
+  overflow: hidden;
+  text-decoration: none;
+}
+
+.card__image {
+  width: 100%;
+}
+
+.card__image img {
+  width: 100%;
+}
+
+.card__description {
+  padding: 20px 24px 35px;
+}
+
+.card__row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+}
+
+/* .card__row:not(:last-child) {
+  margin-bottom: 10px;
+} */
+
+.card__row:nth-child(1) {
+  margin-bottom: 10px;
+}
+
+.card__row:nth-child(3) {
+  margin-top: 29px;
+}
+
+.card__title {
+  color: #000;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 32px;
+  /* 133.333% */
+}
+
+.card__badge {
+  color: #FFF;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 20px;
+  /* 166.667% */
+  padding: 1px 8px;
+  border-radius: 2px;
+  background: #262626;
+}
+
+.card__info {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  row-gap: 25px;
+  column-gap: 25px;
+}
+
+.card__info-raiting {
+  color: #FFC107;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 32px;
+  /* 177.778% */
+}
+
+.card__info-price,
+.card__info-group {
+  color: #8C8C8C;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 32px;
+  /* 177.778% */
+}
+
+.card__info-group {
+  position: relative;
+}
+
+.card__info-group::before {
+  position: absolute;
+  content: "";
+  display: block;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #8C8C8C;
+  left: -15px;
+  top: 13.5px;
+}
+
+.card-description__name {
+  color: #000;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 32px;
+  /* 133.333% */
+}
+
+.card-description__text {
+  color: #8C8C8C;
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.card-description__controls {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 29px;
+}
+
+.card-description__controls-prise {
+  color: #000;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 32px;
+  /* 160% */
+}
+
+.cart-modal-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.40);
+  justify-content: center;
+  align-items: center;
+}
+
+.cart-modal-overlay.open {
+  display: flex;
+}
+
+.cart-modal {
+  max-width: 780px;
+  width: 100%;
+  padding: 40px 45px;
+  border-radius: 5px;
+  background: #FFF;
+}
+
+.cart-modal__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 48px;
+}
+
+.cart-modal__header-title {
+  color: #000;
+  font-size: 36px;
+  font-weight: 700;
+}
+
+.cart-modal__header-close {
+  cursor: pointer;
+}
+
+.cart-modal__footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 50px;
+}
+
+.cart-modal__footer-price {
+  padding: 15px 20px;
+  border-radius: 5px;
+  background: #262626;
+  color: #FAFAFA;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.cart-modal__footer-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.cart-modal__item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* Предусмотрим перенос строк */
+  flex-wrap: wrap;
+  gap: 10px;
+  padding-right: 16px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #D9D9D9;
+  margin-bottom: 17px;
+}
+
+.cart-modal__item-title {
+  color: #000;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 32px;
+  /* 177.778% */
+}
+
+.cart-modal__item-controls {
+  display: flex;
+  align-items: center;
+  gap: 48px;
+}
+
+.cart-modal__item-price {
+  color: #000;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 32px;
+  /* 160% */
+}
+
+.cart-modal__item-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 14px;
+}
+
+.cart-modal__item-inner button {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border-radius: 2px;
+  border: 1px solid #40A9FF;
+  background: #FFF;
+  color: #40A9FF;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 22px;
+  /* 157.143% */
+}
+
+.cart-modal__item-count {
+  color: #000;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  /* 150% */
+}
+
+
+/* @media (max-width: 991px) {} */
+/* Или так */
+@media (width <=991px) {
+  .banner__item {
+    background-image: none;
+  }
+
+  .banner__header-title {
+    max-width: 100%;
+  }
+
+  .banner__text {
+    max-width: 100%;
+  }
+
+  /* Оставляем в строке только 2 карточки */
+  .products__card {
+    width: calc((100% - 24px) / 2);
+  }
+}
+
+@media (width <=600px) {
+
+  /* Оставляем в строке только 1 карточку */
+  .products__card {
+    width: 100%;
+  }
+}
