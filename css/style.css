@@ -169,6 +169,11 @@ p {
   align-items: center;
 }
 
+.products__header.header-goods {
+  justify-content: flex-start;
+  gap: 30px;
+}
+
 .products__header-title {
   color: #000;
   font-size: 36px;
@@ -210,7 +215,7 @@ p {
   width: calc((100% - 48px) / 3);
   border-radius: 7px;
   background: #FFF;
-  box-shadow: 0px 4px 12px 0px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.05);
   /* Чтобы картинка обрезалась по закруглению карточки */
   overflow: hidden;
   text-decoration: none;
@@ -271,8 +276,7 @@ p {
   align-items: center;
   justify-content: flex-start;
   flex-wrap: wrap;
-  row-gap: 25px;
-  column-gap: 25px;
+  gap: 25px;
 }
 
 .card__info-raiting {
@@ -466,9 +470,8 @@ p {
 }
 
 
-/* @media (max-width: 991px) {} */
-/* Или так */
-@media (width <=991px) {
+
+@media (max-width: 991px) {
   .banner__item {
     background-image: none;
   }
@@ -487,7 +490,7 @@ p {
   }
 }
 
-@media (width <=600px) {
+@media (max-width: 600px) {
 
   /* Оставляем в строке только 1 карточку */
   .products__card {

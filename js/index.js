@@ -133,5 +133,115 @@ const restsFunc = () => {
   }
 }
 
+// Создаем функцианальный блок для динамического формирования контейнера с карточками  товаров для каждого ресторана в goods.html
+const goodsFunc = () => {
+  const container = document.querySelector("#goods-container");
+  // Создаем массив с объектами товаров ресторана
+  const goodsArray = [
+    {
+      id: 0,
+      name: 'Ролл угорь стандарт',
+      components: 'Рис, угорь, соус унаги, кунжут, водоросли нори.',
+      price: 250,
+      image: 'goods-1.jpg',
+    },
+    {
+      id: 1,
+      name: 'Калифорния лосось стандарт',
+      components: ' Рис, лосось, авокадо, огурец, майонез, икра масаго, водоросли нори.',
+      price: 250,
+      image: 'goods-2.jpg',
+    },
+    {
+      id: 2,
+      name: 'Окинава стандарт',
+      components: 'Рис, креветка отварная, сыр сливочный, лосось, огурец свежий...',
+      price: 250,
+      image: 'goods-3.jpg',
+    },
+    {
+      id: 3,
+      name: 'Цезарь маки хl',
+      components: 'Рис, куриная грудка копченая, икра масаго, томат, айсберг, соус цезарь...',
+      price: 250,
+      image: 'goods-4.jpg',
+    },
+    {
+      id: 4,
+      name: 'Ясай маки стандарт 185 г',
+      components: 'Рис, помидор свежий, перец болгарский, авокадо, огурец, айсберг',
+      price: 250,
+      image: 'goods-5.jpg',
+    },
+    {
+      id: 5,
+      name: 'Ролл с креветкой стандарт',
+      components: 'Рис, водоросли нори, креветки отварные, сыр сливочный, огурцы',
+      price: 250,
+      image: 'goods-6.jpg',
+    },
+  ]
+
+  const loading = () => {
+    //  Затираем карточки в контейнере и вместо них в контейнере отображаем слово ЗАГРУЗКА
+    container.innerHTML = '<p style="width: 100%; text-align: center;">Загрузка</p>';
+  };
+
+  // Создаем функцию кототрая отвечает за получение массива объектов с данными карточек товаров ресторана и отрисовку карточек товаров из этого массива на странице (в контейнере) goods.html
+  const renderGoods = (array) => {
+    // Очищаем контейнер
+    container.innerHTML = '';
+    // Перебираем массив с данными карточек и отрисовываем каждую карточку на странице 
+    array.forEach(card => {
+      // Отрисовываем каждый объект массива в виде карточки и вставляем её в контейнер
+      container.insertAdjacentHTML('beforeend',
+        `
+        <div class="products__card card">
+          <div class="card__image">
+            <img src="./images/goods/${card.image}" alt="${card.image}">
+          </div>
+          <div class="card__description card-description">
+            <div class="card__row">
+              <h4 class="card-description__name">${card.name}</h4>
+            </div>
+
+            <div class="card__row">
+              <p class="card-description__text">
+                ${card.components}
+              </p>
+            </div>
+
+            <div class="card__row">
+              <div class="card-description__controls">
+                <button class="btn btn-primary">
+                  <span>В корзину</span>
+                  <img src="./images/icons/shopping-cart-white.svg" alt="shopping cart">
+                </button>
+                <sppan class="card-description__controls-prise">
+                  ${card.price} ₽
+                </sppan>
+              </div>
+            </div>    
+          </div>
+        </div>
+      `
+      )
+    })
+
+
+  }
+
+
+  if (container) {
+    loading();
+    setTimeout(() => {
+      renderGoods(goodsArray);
+    }, 3000)
+  };
+}
+
+
+
 modalFunc();
 restsFunc();
+goodsFunc();
